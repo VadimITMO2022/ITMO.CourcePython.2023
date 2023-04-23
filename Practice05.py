@@ -3,6 +3,12 @@ import pygame as p
 import random
 from pygame.locals import *
 from PIL import Image
+import os
+
+#import Image
+#import sys
+#sys.path.append(r'.\my-venv')
+#print(sys.path)
 
 #-------------------------------------------------------------------------------------------
 
@@ -81,7 +87,13 @@ while count < count_max:
  #   new_img = root
 #    new_img.save.update()
     if(count % 5 == 0):
-      image_name = 'Practice05-Images/'+str(count)+'.png'
+    
+      filename = 'Practice05-Images'
+      if os.path.exists(filename):
+       image_name = filename+'/'+str(count)+'.png'
+      else: 
+       os.mkdir(filename)
+       image_name = filename+'/'+str(count)+'.png'
       p.image.save(root, image_name)
     cells2 = [[0 for j in range(len(cells[0]))] for i in range(len(cells))]
     for i in range(len(cells)):
@@ -105,3 +117,5 @@ while count < count_max:
     cells = cells2
 
     count += 1
+
+

@@ -1,0 +1,1 @@
+D:\PythonProject\my-venv/Scripts/python.exe  C:\Practice05\Practice05.py
